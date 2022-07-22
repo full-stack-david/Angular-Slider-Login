@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="header">
+    <a class="login" (click)="open(mymodal)">Login</a>
+  </div>
+
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Login</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="md-form">
+        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        <input type="email" id="defaultForm-email" class="form-control validate">
+      </div>
+  
+      <div class="md-form">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        <input type="password" id="defaultForm-pass" class="form-control validate">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Login</button>
+    </div>
+  </ng-template>
+  
+  <ngb-carousel>
+    <ng-template *ngFor="let i of [1,2,3,4,5]" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/img-0{{i}}.jpg">
+      </div>
+      <div class="carousel-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+   
